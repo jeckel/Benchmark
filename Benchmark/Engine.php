@@ -22,7 +22,6 @@ class Benchmark_Engine
 
     protected function init()
     {
-        var_dump($this->config['log_file_mask'], $this->engine);
         $log_filename = sprintf($this->config['log_file_mask'], $this->engine);
         $this->file = fopen($log_filename, 'w');
         $this->log("Start loading data into table");
