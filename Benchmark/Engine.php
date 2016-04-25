@@ -45,7 +45,10 @@ class Benchmark_Engine
         $task->setTimer($this->timer);
         $task->init();
 
-        for ($i = 0; $i <= $this->config['dflt_nb_process']; $i++) {
+        $task_config = $task->getConfig();
+        $nb_process = isset($task_config['nb_process']) ? $task_config['nb_process'] : $this->config['dflt_nb_process'];
+
+        for ($i = 0; $i <= $nb_process; $i++) {
 
             $task->process();
 

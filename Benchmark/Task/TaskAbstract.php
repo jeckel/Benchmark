@@ -14,4 +14,9 @@ abstract class Benchmark_Task_TaskAbstract implements Benchmark_Task_Interface
     {
         $this->timer = $timer;
     }
+
+    public function getConfig()
+    {
+        return $this->config;
+    }
 }
