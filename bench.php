@@ -11,8 +11,6 @@ if (is_file('config/config.local.php')) {
     $config = array_replace_recursive($config, include 'config/config.local.php');
 }
 
-var_dump($config); die;
-
 /**
  * Autoload
  */
@@ -23,7 +21,7 @@ function __autoload($class_name) {
 
 // Check entry parameters
 if (count($argv) == 1) {
-    die("Argument missing, you need to specify one of the task to run\n");
+    die(sprintf("Argument missing, you need to specify one of the tasks to run (%s)\n", implode(", ", array_keys($config['tasks']))));
 }
 
 

@@ -45,11 +45,11 @@ class Benchmark_Engine
         $task->setTimer($this->timer);
         $task->init();
 
-        for ($i = 0; $i <= $this->config['dflt_nb_lines_to_insert']; $i++) {
+        for ($i = 0; $i <= $this->config['dflt_nb_process']; $i++) {
 
             $task->process();
 
-            if ($i % $this->config['dflt_nb_lines_offset_log'] == 0) {
+            if ($i % $this->config['dflt_nb_process_offset_log'] == 0) {
                 $this->log(sprintf("%01.2f : %d lines inserted", $this->timer->getTime(), $i));
             }
         }
